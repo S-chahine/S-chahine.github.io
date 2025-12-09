@@ -28,8 +28,8 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="animate-fade-in opacity-0" style={{ animationDelay: "0.2s" }}>
-            <span className="inline-block px-4 py-2 rounded-full glass text-md text-muted-foreground mb-6">
+          <div className="animate-fade-in py-20 opacity-0" style={{ animationDelay: "0.2s" }}>
+            <span className="inline-block px-4 py-2 rounded-full glass text-md text-muted-foreground mb-0">
               👋 Welcome to my portfolio
             </span>
           </div>
@@ -71,7 +71,7 @@ const HeroSection = () => {
           </div>
 
           <div
-            className="flex justify-center gap-6 animate-fade-in opacity-0 "
+            className="flex justify-center py-20 gap-6 animate-fade-in opacity-0 "
             style={{ animationDelay: "1s" }}
           >
             <a
