@@ -19,7 +19,7 @@ A responsive developer portfolio built with React and Vite to showcase my projec
 ## 🛠 Tech Stack
 
 - **Frontend:** React, TypeScript, Vite
-- **Styling:** Tailwind CSS (or your choice: CSS Modules / Styled Components / etc.)
+- **Styling:** Tailwind CSS 
 - **Icons / UI:** (e.g. Lucide, React Icons, shadcn/ui)
 - **Deployment:** GitHub Pages (gh-pages)
 
