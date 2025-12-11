@@ -1,15 +1,19 @@
 import { ExternalLink, Folder } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
+import taskTrack from "@/assets/taskTrack.png"; 
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Task Track – Task Manager",
     description:
-      "A full-stack e-commerce application with user authentication, product management, shopping cart, and payment integration.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "A sleek task management app where users can add tasks, categorize them (Work, School, Personal), track completion stats, and filter by category — built to showcase modern React UI and clean state management.",
+    tech: ["React",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "shadcn/ui",],
+    github: "https://github.com/S-chahine/task-track",
+    live: "https://s-chahine.github.io/task-track/",
     featured: true,
   },
   {
@@ -52,9 +56,12 @@ const projects = [
 
 const FeaturedProject = ({ project }: { project: typeof projects[0] }) => (
   <div className="group relative rounded-2xl overflow-hidden glass hover:glow-primary transition-all duration-500">
-    <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-      <Folder className="w-20 h-20 text-muted-foreground/30" />
-    </div>
+  <div className="px-10 py-7">    
+    <img          
+      src={taskTrack}
+      alt="task track" 
+      className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"></img></div>
+   
     <div className="p-6">
       <h3 className="text-xl font-semibold mb-2 group-hover:gradient-text transition-all duration-300">
         {project.title}
