@@ -1,45 +1,69 @@
-const frontendSkills = [
-  { name: "React", level: 85 },
-  { name: "TypeScript", level: 80 },
-  { name: "Next.js", level: 75 },
-  { name: "Tailwind CSS", level: 90 },
-  { name: "HTML/CSS", level: 95 },
-  { name: "JavaScript", level: 88 },
+// SkillsSection.tsx
+import React from "react";
+
+type SkillCard = {
+  title: string;
+  accentText: string;
+  dotBg: string;      
+  items: string[];
+};
+
+const skillCards: SkillCard[] = [
+  {
+    title: "Frontend Development",
+    accentText: "gradient-text",
+    dotBg: "bg-blue-300",
+    items: ["React", "HTML/CSS", "Tailwind CSS", "TypeScript", "JavaScript" ],
+  },
+  {
+    title: "Backend Development",
+    accentText: "text-purple-300",
+    dotBg: "bg-purple-400",
+    items: ["Node.js", "Nest.js", "Express.js", "Python", "MongoDB", "PostgreSQL", "REST APIs"],
+  },
+  {
+    title: "Tools & Technologies",
+    accentText: "text-emerald-300",
+    dotBg: "bg-emerald-400",
+    items: ["Git", "GitHub Actions", "VSCode", "Figma", "Postman", "Linux"],
+  },
 ];
 
-const backendSkills = [
-  { name: "Node.js", level: 80 },
-  { name: "Express.js", level: 78 },
-  { name: "Python", level: 70 },
-  { name: "MongoDB", level: 75 },
-  { name: "PostgreSQL", level: 72 },
-  { name: "REST APIs", level: 85 },
-];
-
-const tools = [
-  "Git", "Docker", "VS Code", "Figma", "Postman", "Linux", "AWS", "Vercel", "GitHub Actions"
-];
-
-const SkillBar = ({ name, level }: { name: string; level: number }) => (
-  <div className="mb-4">
-    <div className="flex justify-between mb-2">
-      <span className="font-medium">{name}</span>
-      <span className="text-muted-foreground">{level}%</span>
-    </div>
-    <div className="h-2 bg-secondary rounded-full overflow-hidden">
-      <div
-        className="h-full gradient-primary rounded-full transition-all duration-1000 ease-out"
-        style={{ width: `${level}%` }}
-      />
-    </div>
-  </div>
-);
-
-const SkillsSection = () => {
+function SkillCardBlock({ card }: { card: SkillCard }) {
   return (
-    <section id="skills" className="py-20 md:py-32 bg-muted/30">
+    <div
+      className="
+        rounded-2xl p-8 md:p-10
+        bg-white/[0.06] border border-white/10
+        shadow-[0_10px_30px_-18px_rgba(0,0,0,0.8)]
+        backdrop-blur
+        transition-all duration-300
+        hover:bg-white/[0.085] hover:border-white/15 hover:-translate-y-0.5
+      "
+    >
+      <h3 className={`text-2xl md:text-3xl font-semibold ${card.accentText}`}>
+        {card.title}
+      </h3>
+
+      <ul className="mt-7 space-y-4 text-muted-foreground/90">
+        {card.items.map((item) => (
+          <li key={item} className="flex items-start gap-4">
+            <span
+              className={`mt-[0.55rem] h-2 w-2 rounded-full ${card.dotBg} shadow-[0_0_0_2px_rgba(255,255,255,0.03)]`}
+            />
+            <span className="text-base md:text-lg">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default function SkillsSection() {
+  return (
+    <section id="skills" className="py-20 md:py-32">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+<div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-accent font-mono text-sm tracking-wider uppercase">
               Skills
@@ -51,46 +75,33 @@ const SkillsSection = () => {
               Technologies and tools I work with to bring ideas to life
             </p>
           </div>
+        <div className="relative max-w-6xl mx-auto rounded-3xl border border-white/10 bg-black/30 p-6 md:p-10 overflow-hidden">
+          {/* subtle glow */}
+          <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div className="p-8 rounded-2xl glass">
-              <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full gradient-primary" />
-                Frontend Development
-              </h3>
-              {frontendSkills.map((skill) => (
-                <SkillBar key={skill.name} name={skill.name} level={skill.level} />
-              ))}
-            </div>
+          {/* subtle grid background */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-25"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+              backgroundSize: "48px 48px",
+              maskImage:
+                "radial-gradient(ellipse at center, black 55%, transparent 75%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse at center, black 55%, transparent 75%)",
+            }}
+          />
 
-            <div className="p-8 rounded-2xl glass">
-              <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full gradient-accent" />
-                Backend Development
-              </h3>
-              {backendSkills.map((skill) => (
-                <SkillBar key={skill.name} name={skill.name} level={skill.level} />
-              ))}
-            </div>
+          {/* Cards */}
+          <div className="relative grid gap-6 md:grid-cols-3">
+            {skillCards.map((card) => (
+              <SkillCardBlock key={card.title} card={card} />
+            ))}
           </div>
-
-          <div className="text-center">
-            <h3 className="text-xl font-semibold mb-6">Tools & Technologies</h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {tools.map((tool) => (
-                <span
-                  key={tool}
-                  className="px-4 py-2 rounded-full glass text-sm font-medium hover:glow-primary transition-all duration-300 cursor-default"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default SkillsSection;
+}

@@ -1,6 +1,7 @@
 import { ExternalLink, Folder } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import taskTrack from "@/assets/taskTrack.png"; 
+import quoteMachine from "@/assets/quote-machine.png";
 
 const projects = [
   {
@@ -11,18 +12,24 @@ const projects = [
     "TypeScript",
     "Vite",
     "Tailwind CSS",
-    "shadcn/ui",],
+    "shadcn/ui"],
     github: "https://github.com/S-chahine/task-track",
     live: "https://s-chahine.github.io/task-track/",
+    srcImg: taskTrack,
     featured: true,
   },
   {
-    title: "Task Management App",
+    title: "Quote Machine - Quote Generator",
     description:
-      "A collaborative task management tool with real-time updates, drag-and-drop functionality, and team workspaces.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "A vibrant quote machine app that serves random quotes from an external API with smooth animations and social share buttons.",
+    tech: ["React",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "shadcn/ui"],
+    github: "https://github.com/S-chahine/quote-machine",
+    live: "https://s-chahine.github.io/quote-machine",
+    srcImg: quoteMachine,
     featured: true,
   },
   {
@@ -32,35 +39,20 @@ const projects = [
     tech: ["React", "Tailwind CSS", "OpenWeather API"],
     github: "https://github.com",
     live: "https://example.com",
+    srcImg: taskTrack,
     featured: true,
-  },
-  {
-    title: "Blog Platform",
-    description: "A markdown-based blog with CMS, SEO optimization, and social sharing features.",
-    tech: ["Next.js", "MDX", "Tailwind CSS"],
-    github: "https://github.com",
-  },
-  {
-    title: "Portfolio Generator",
-    description: "A tool that generates beautiful portfolio websites from JSON configuration.",
-    tech: ["React", "Node.js", "AWS S3"],
-    github: "https://github.com",
-  },
-  {
-    title: "Chat Application",
-    description: "Real-time chat app with rooms, direct messaging, and file sharing capabilities.",
-    tech: ["React", "Firebase", "WebRTC"],
-    github: "https://github.com",
   },
 ];
 
 const FeaturedProject = ({ project }: { project: typeof projects[0] }) => (
   <div className="group relative rounded-2xl overflow-hidden glass hover:glow-primary transition-all duration-500">
   <div className="px-10 py-7">    
+   <div className="glass glow-primary"> 
     <img          
-      src={taskTrack}
-      alt="task track" 
-      className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"></img></div>
+      src={project.srcImg}
+      alt={project.title} 
+      className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"></img>
+      </div>
    
     <div className="p-6">
       <h3 className="text-xl font-semibold mb-2 group-hover:gradient-text transition-all duration-300">
@@ -98,6 +90,7 @@ const FeaturedProject = ({ project }: { project: typeof projects[0] }) => (
             <ExternalLink size={20} />
           </a>
         )}
+        </div>
       </div>
     </div>
   </div>
