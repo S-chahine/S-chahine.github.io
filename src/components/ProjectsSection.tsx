@@ -5,7 +5,7 @@ import quoteMachine from "@/assets/quote-machine.png";
 
 const projects = [
   {
-    title: "Task Track – Task Manager",
+    title: "Task Track - Task Manager",
     description:
       "A sleek task management app where users can add tasks, categorize them (Work, School, Personal), track completion stats, and filter by category — built to showcase modern React UI and clean state management.",
     tech: ["React",
@@ -31,17 +31,8 @@ const projects = [
     live: "https://s-chahine.github.io/quote-machine",
     srcImg: quoteMachine,
     featured: true,
-  },
-  {
-    title: "Weather Dashboard",
-    description:
-      "A beautiful weather application that displays current conditions and forecasts with interactive charts.",
-    tech: ["React", "Tailwind CSS", "OpenWeather API"],
-    github: "https://github.com",
-    live: "https://example.com",
-    srcImg: taskTrack,
-    featured: true,
-  },
+  }
+ 
 ];
 
 const FeaturedProject = ({ project }: { project: typeof projects[0] }) => (
@@ -163,7 +154,7 @@ const ProjectsSection = () => {
             ))}
           </div>
 
-          <h3 className="text-2xl font-semibold text-center mb-8">Other Projects</h3>
+          <h3 className="text-2xl font-semibold text-center mb-8">Other Projects Coming Soon ...</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {otherProjects.map((project) => (
               <SmallProject key={project.title} project={project} />
