@@ -2,12 +2,13 @@ import { ExternalLink, Folder } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import taskTrack from "@/assets/taskTrack.png"; 
 import quoteMachine from "@/assets/quote-machine.png";
+import { useState } from "react";
 
 const projects = [
   {
     title: "Task Track - Task Manager",
     description:
-      "A sleek task management app where users can add tasks, categorize them (Work, School, Personal), track completion stats, and filter by category — built to showcase modern React UI and clean state management.",
+      "A sleek task management app where users can add tasks, categorize them (work, school, personal), track completion stats, and filter by category. ",
     tech: ["React",
     "TypeScript",
     "Vite",
@@ -35,7 +36,12 @@ const projects = [
  
 ];
 
-const FeaturedProject = ({ project }: { project: typeof projects[0] }) => (
+const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
+    const [expanded, setExpanded] = useState(false);
+
+  const shouldShowToggle = project.description.length > 120;
+
+  return (
   <div className="group relative rounded-2xl overflow-hidden glass hover:glow-primary transition-all duration-500">
   <div className="px-10 py-7">    
    <div className="glass glow-primary"> 
@@ -49,9 +55,24 @@ const FeaturedProject = ({ project }: { project: typeof projects[0] }) => (
       <h3 className="text-xl font-semibold mb-2 group-hover:gradient-text transition-all duration-300">
         {project.title}
       </h3>
-      <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+      <p
+            className={`text-muted-foreground text-sm mb-4 ${
+              expanded ? "" : "line-clamp-2"
+            }`}
+          >
         {project.description}
       </p>
+        {shouldShowToggle && (
+          <div className="flex justify-end mb-4">
+            <button
+              type="button"
+              onClick={() => setExpanded((prev) => !prev)}
+              className="text-[11px] text-primary hover:text-[10px] mb-4"
+            >
+              {expanded ? "Show less" : "Show more"}
+            </button>
+          </div>)
+          }
       <div className="flex flex-wrap gap-2 mb-4">
         {project.tech.map((tech) => (
           <span
@@ -86,6 +107,7 @@ const FeaturedProject = ({ project }: { project: typeof projects[0] }) => (
     </div>
   </div>
 );
+};
 
 const SmallProject = ({ project }: { project: typeof projects[0] }) => (
   <div className="p-6 rounded-xl glass hover:glow-primary transition-all duration-300 group">
@@ -154,7 +176,7 @@ const ProjectsSection = () => {
             ))}
           </div>
 
-          <h3 className="text-2xl font-semibold text-center mb-8">Other Projects Coming Soon ...</h3>
+          <h3 className="text-2xl font-semibold text-center mb-8">Other Projects Coming soon ...</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {otherProjects.map((project) => (
               <SmallProject key={project.title} project={project} />
