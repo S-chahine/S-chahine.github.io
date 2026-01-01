@@ -48,7 +48,7 @@ const projects = [
     "Vercel (deployment)"
     ],
     github: "https://github.com/S-chahine/note-buddy",
-    live: "https:note-buddy-iota.vercel.app",
+    live: "https://note-buddy-iota.vercel.app",
     srcImg: noteBuddy,
     featured: true,
   }
