@@ -40,12 +40,12 @@ const projects = [
       "NoteBuddy is a full-stack web application that helps users write, organize, and understand their notes — with live AI assistance.",
     tech: ["Next.js",
     "TypeScript",
-     "Tailwind CSS",
     "shadcn/ui",
+     "Tailwind CSS",
     "Supabase Auth",
     "Postgres, Prisma",
+    "Vercel (deployment)",
     "Gemini (AI content generation)",
-    "Vercel (deployment)"
     ],
     github: "https://github.com/S-chahine/note-buddy",
     live: "https://note-buddy-iota.vercel.app",
@@ -97,7 +97,7 @@ const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
         {project.tech.map((tech) => (
           <span
             key={tech}
-            className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium"
+            className="text-xs px-1 py-1 rounded-full bg-primary/10 text-primary font-medium"
           >
             {tech}
           </span>
