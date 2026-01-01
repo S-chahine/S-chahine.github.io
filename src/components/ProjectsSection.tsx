@@ -2,6 +2,7 @@ import { ExternalLink, Folder } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import taskTrack from "@/assets/taskTrack.png"; 
 import quoteMachine from "@/assets/quote-machine.png";
+import noteBuddy from "@/assets/noteBuddy.png";
 import { useState } from "react";
 
 const projects = [
@@ -32,6 +33,24 @@ const projects = [
     live: "https://s-chahine.github.io/quote-machine",
     srcImg: quoteMachine,
     featured: true,
+  },
+  {
+    title: "Note Buddy - Smart AI-Powered Note Taking App",
+    description:
+      "NoteBuddy is a full-stack web application that helps users write, organize, and understand their notes — with live AI assistance.",
+    tech: ["Next.js",
+    "TypeScript",
+     "Tailwind CSS",
+    "shadcn/ui",
+    "Supabase Auth",
+    "Postgres, Prisma",
+    "Gemini (AI content generation)",
+    "Vercel (deployment)"
+    ],
+    github: "https://github.com/S-chahine/note-buddy",
+    live: "https:note-buddy-iota.vercel.app",
+    srcImg: noteBuddy,
+    featured: true,
   }
  
 ];
@@ -45,10 +64,11 @@ const FeaturedProject = ({ project }: { project: typeof projects[0] }) => {
   <div className="group relative rounded-2xl overflow-hidden glass hover:glow-primary transition-all duration-500">
   <div className="px-10 py-7">    
    <div className="glass glow-primary"> 
+   <a href={project.live}>
     <img          
       src={project.srcImg}
       alt={project.title} 
-      className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"></img>
+      className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"></img></a> 
       </div>
    
     <div className="p-6">
