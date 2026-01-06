@@ -13,7 +13,7 @@ const skillCards: SkillCard[] = [
     title: "Frontend Development",
     accentText: "gradient-text",
     dotBg: "bg-blue-300",
-    items: ["React", "HTML/CSS", "Tailwind CSS", "TypeScript", "JavaScript" ],
+    items: ["React", "Next.js", "HTML/CSS", "Tailwind CSS", "TypeScript", "JavaScript" ],
   },
   {
     title: "Backend Development",
