@@ -11,7 +11,7 @@ const HeroSection = () => {
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Tech Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${techBackground})` }}
       />
@@ -27,48 +27,63 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
 
       <div className="container mx-auto px-4 z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="animate-fade-in py-20 opacity-0" style={{ animationDelay: "0.2s" }}>
-            <span className="inline-block px-4 py-2 rounded-full glass text-md text-muted-foreground mb-0">
-              👋 Welcome to my portfolio
-            </span>
-          </div>
-
-          <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-12 animate-fade-in opacity-0 text-primary-foreground"
-            style={{ animationDelay: "0.4s" }}
-          >
-            Hi, I'm{" "}
-            <span className="gradient-text">Samah Chahine</span>
-          </h1>
-          <div className="justify-items-center mb-5">
-            <img 
-            src={profileImg}
-            alt="Samah Chahine"
-            className="
-      w-auto h-80 object-cover rounded-3xl
+        <div className="max-w-8xl py-20 mx-auto text-center">
+          {/* Profile Image With Text Overlay */}
+          <div className="relative mx-auto mb-8 w-full max-w-8xl  overflow-hidden rounded-3xl">
+            <img
+              src={profileImg}
+              alt="Profile Image"
+              className="
+      w-full h-[clamp(320px,75vw,680px)] object-cover rounded-3xl
       [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]
-    "/>
-    </div>
-    <div>
-            <p
-              className="text-lg md:text-xl leading-relaxed md:leading-loose text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in opacity-0 text-balance"
-              style={{ animationDelay: "0.6s" }}
-            >
-              A passionate{" "}
-              <span className="text-accent font-semibold">Full Stack Developer</span>{" "}
-              crafting beautiful web experiences with modern technologies. I love turning ideas into reality through code.
-            </p>
+    "
+            />
+            {/* Dark overlay on profile image so text is readable */}
+            <div className="absolute inset-0 rounded-3xl bg-black/35 " />
+
+            {/* Name and Slogan */}
+            <div className="absolute right-2  top-[clamp(1rem,1vw,2rem)]  max-w-xl text-center">
+
+              <h1 style={{ fontFamily: "'Times New Roman', serif" }} className="text-[clamp(2rem,4vw,4.5rem)] font-bold tracking-tight text-white drop-shadow-lg">
+                Samah Chahine
+              </h1>
+              <div className="flex items-center justify-end gap-[clamp(0.25rem,1vw,1rem)] mt-2">
+
+                <span className="block h-[1px] w-[clamp(1rem,4vw,4rem)] bg-white/70"></span>
+
+                <p className="text-[clamp(1rem,1.5vw,1.5rem)] text-white/90 drop-shadow-md whitespace-nowrap">
+                  Full Stack Developer
+                </p>
+                <span className="block h-[1px] w-[clamp(1rem,4vw,4rem)] bg-white/70"></span>
+              </div>
+              <h1 className="mt-5 max-w-2xl text-[clamp(1rem,2vw,4rem)] text-white/90 drop-shadow-md">
+                Turning ideas into
+              </h1>
+              <h1 className=" max-w-2xl italic text-[clamp(1rem,2vw,4rem)] text-white/90 drop-shadow-md">
+                responsive web apps</h1>
+
+              <div
+                className="flex sm:flex-row gap-2 justify-center mt-[clamp(1rem,3vw,3rem)] mb-[clamp(1.5rem,5vw,3rem)] animate-fade-in opacity-0"
+                style={{ animationDelay: "0.8s" }}
+              >
+                <Button variant="hero"
+                  size="xl"
+                  className="
+                    h-[clamp(2.25rem,4.5vw,3.25rem)]
+                    px-[clamp(0.25rem,2vw,1.75rem)]
+                    text-[clamp(0.75rem,1.8vw,1rem)]
+                  "
+                  asChild>
+                  <a href="#projects">View My Work</a>
+                </Button>
+
+              </div>
+            </div>
           </div>
-          <div
-            className="flex flex-col sm:flex-row gap-4 justify-center mt-12 mb-12 animate-fade-in opacity-0"
-            style={{ animationDelay: "0.8s" }}
-          >
-            <Button variant="hero" size="xl" asChild>
-              <a href="#projects">View My Work</a>
-            </Button>
+          <div>
 
           </div>
+
 
           <div
             className="flex justify-center py-20 gap-6 animate-fade-in opacity-0 "
