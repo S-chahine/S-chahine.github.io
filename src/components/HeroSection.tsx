@@ -86,7 +86,7 @@ const HeroSection = () => {
 
 
           <div
-            className="flex justify-center py-20 gap-6 animate-fade-in opacity-0 "
+            className="flex justify-center  gap-6 animate-fade-in opacity-0 mb-0 "
             style={{ animationDelay: "1s" }}
           >
             <a
@@ -112,13 +112,14 @@ const HeroSection = () => {
               <Mail size={24} />
             </a>
           </div>
-        </div>
-
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="absolute mt-5 left-1/2 -translate-x-1/2 animate-bounce">
           <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
             <ArrowDown size={28} />
           </a>
         </div>
+        </div>
+
+        
       </div>
     </section>
   );
