@@ -92,6 +92,7 @@ const TeamProject = ({ project }: { project: typeof projects[0] }) => {
             <img
               src={project.srcImg}
               alt={project.title}
+              draggable={false}
               className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"></img></a>
         </div>
 
@@ -136,6 +137,7 @@ const IndependentProject = ({ project }: { project: typeof projects[0] }) => {
             <img
               src={project.srcImg}
               alt={project.title}
+              draggable={false}
               className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"></img></a>
         </div>
 
