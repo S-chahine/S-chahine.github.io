@@ -2,6 +2,7 @@ import { ExternalLink, Folder } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import kidsfirst from "@/assets/Kidsfirst_card.png";
 import psl from "@/assets/PSL_card.png";
+import pomodoro from "@/assets/pomodoro.png";
 import taskTrack from "@/assets/taskTrack.png";
 import quoteMachine from "@/assets/quote-machine.png";
 import noteBuddy from "@/assets/noteBuddy.png";
@@ -29,20 +30,6 @@ const projects = [
     srcImg: psl,
     badge: ["Completed", "Team Project", "NDA Protected"],
     team: true,
-  },
-  {
-    title: "Task Track - Task Manager",
-    description:
-      "A sleek task management app where users can add tasks, categorize them (work, school, personal), track completion stats, and filter by category. ",
-    tech: ["React",
-      "TypeScript",
-      "Vite",
-      "Tailwind CSS",
-      "shadcn/ui"],
-    github: "https://github.com/S-chahine/task-track",
-    live: "https://s-chahine.github.io/task-track/",
-    srcImg: taskTrack,
-    team: false,
   },
   {
     title: "Quote Machine - Quote Generator",
@@ -74,6 +61,39 @@ const projects = [
     github: "https://github.com/S-chahine/note-buddy",
     live: "https://note-buddy-iota.vercel.app",
     srcImg: noteBuddy,
+    team: false,
+  },
+  {
+  title: "Pomodoro Timer",
+  description:
+    "A cross-platform Pomodoro timer app with focus, short break, and long break sessions. Users can choose preset timer modes, create and save custom presets, name custom profiles, track completed sessions, enable sound feedback, and receive a celebration animation after completing a full Pomodoro cycle.",
+  tech: [
+    "Expo",
+    "React Native",
+    "TypeScript",
+    "NativeWind",
+    "Gluestack UI",
+    "React Native Reanimated",
+    "Expo Audio",
+    "AsyncStorage",
+  ],
+  github: "https://github.com/S-chahine/pomodoro-modern",
+  live: "https://pomodoro-modern-gamma.vercel.app/",
+  srcImg: pomodoro,
+  team: false,
+},
+{
+    title: "Task Track - Task Manager",
+    description:
+      "A sleek task management app where users can add tasks, categorize them (work, school, personal), track completion stats, and filter by category. ",
+    tech: ["React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui"],
+    github: "https://github.com/S-chahine/task-track",
+    live: "https://s-chahine.github.io/task-track/",
+    srcImg: taskTrack,
     team: false,
   }
 
@@ -131,8 +151,8 @@ const IndependentProject = ({ project }: { project: typeof projects[0] }) => {
 
   return (
     <div className="group relative rounded-2xl overflow-hidden glass hover:glow-primary transition-all duration-500">
-      <div className="px-10 py-7">
-        <div className="glass glow-primary">
+      <div className="px-10 py-7 place-items-center">
+        <div className="w-80 glass glow-primary">
           <a href={project.live}>
             <img
               src={project.srcImg}
@@ -243,7 +263,7 @@ const ProjectsSection = () => {
             </Button>
           </div>
           <h3 className="text-2xl font-semibold text-center mb-8">Independent Projects</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
             {independentProjects.map((project) => (
               <IndependentProject key={project.title} project={project} />
             ))}
