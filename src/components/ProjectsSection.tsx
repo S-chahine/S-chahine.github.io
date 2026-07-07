@@ -151,8 +151,8 @@ const IndependentProject = ({ project }: { project: typeof projects[0] }) => {
 
   return (
     <div className="group relative rounded-2xl overflow-hidden glass hover:glow-primary transition-all duration-500">
-      <div className="px-10 py-7 place-items-center">
-        <div className="w-80 glass glow-primary">
+      <div className="px-10 py-7">
+      <div className="relative glass glow-primary overflow-hidden rounded-xl">
           <a href={project.live}>
             <img
               src={project.srcImg}
