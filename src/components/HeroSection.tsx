@@ -2,7 +2,7 @@ import { ArrowDown, Mail } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import techBackground from "@/assets/tech-background.jpg";
-import profileImg from "@/assets/profile.jpg";
+import profileImg from "@/assets/profile.png";
 
 const HeroSection = () => {
   return (
