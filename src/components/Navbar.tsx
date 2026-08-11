@@ -22,15 +22,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled ? "glass py-3" : "bg-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-start justify-between">
-        <a href="#home" className="text-2xl font-bold gradient-text">
-          {"<Dev />"}
-        </a>
-
+      <div className="container px-4 flex items-center justify-center">
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
@@ -43,10 +39,6 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 gradient-primary transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
-        </div>
-
-        <div className="hidden md:block w-24">
-          
         </div>
 
         {/* Mobile Menu Button */}
