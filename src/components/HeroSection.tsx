@@ -42,7 +42,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 rounded-3xl bg-black/35 " />
 
             {/* Name and Slogan */}
-            <div className="absolute right-2  top-[clamp(1rem,1vw,2rem)]  max-w-xl text-center">
+            <div className="absolute left-2  top-[clamp(3rem,5vw,6rem)]  max-w-xl text-center">
 
               <h1 style={{ fontFamily: "'Times New Roman', serif" }} className="text-[clamp(2rem,4vw,4.5rem)] font-bold tracking-tight text-white drop-shadow-lg">
                 Samah Chahine

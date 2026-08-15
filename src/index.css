@@ -43,6 +43,8 @@
 
     --radius: 0.75rem;
 
+    --olive: 65 38% 30%;
+
     --gradient-primary: linear-gradient(135deg, hsl(195 85% 45%), hsl(175 70% 42%));
     --gradient-accent: linear-gradient(135deg, hsl(175 70% 42%), hsl(200 80% 50%));
     --gradient-hero: linear-gradient(135deg, hsl(210 30% 8%), hsl(200 25% 12%));
@@ -94,6 +96,8 @@
     --border: 210 25% 18%;
     --input: 210 25% 18%;
     --ring: 195 90% 50%;
+
+    --olive: 65 38% 30%;
 
     --gradient-primary: linear-gradient(135deg, hsl(195 90% 50%), hsl(175 75% 48%));
     --gradient-accent: linear-gradient(135deg, hsl(175 75% 48%), hsl(200 85% 55%));
